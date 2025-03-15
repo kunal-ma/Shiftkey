@@ -40,3 +40,52 @@ A_UserDir := EnvGet("USERPROFILE")
 #!Enter::ExitApp
 
 ; ----------------------------------
+;         Advanced Functions       -
+; ----------------------------------
+
+; Text Shortcuts: Allows you to set and use 10 text shortcuts using the number keys.
+
+; Load phrases from the settings file
+Text := Array()
+Loop
+{
+    Text.Push(IniRead("settings.ini", "Text", A_Index, "-1"))
+    If Text[A_Index] = -1
+        Break
+}
+
+; Take single key input from the user and return the key pressed.
+KeyWaitAny()
+{
+    ih := InputHook()
+    ih.KeyOpt("{All}", "E")
+    ih.Start()
+    ih.Wait()
+    return ih.EndKey
+}
+
+; Usage: [Win + ,] followed by [1 to 0]
+#,::
+{
+    Sleep 200
+    Key := KeyWaitAny()
+    if (Key = '``')
+    {
+        while (1)
+        {
+            Key := KeyWaitAny()
+            if isDigit(Key)
+                Send Text[Integer(Key)]
+            else if (Key = '``')
+                break
+			else
+				Send Key
+        }
+    }
+    else if isDigit(Key)
+        Send Text[Integer(Key)]
+    else
+        MsgBox "Invalid Key Pressed !"
+}
+
+; ----------------------------------
