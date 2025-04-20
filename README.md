@@ -9,16 +9,6 @@
 
 You can download pre-compiled executables from the <a href="https://github.com/kunal-ma/Shiftkey/releases">Releases</a> section or compile the scripts yourself using the Ahk2Exe compiler. While the scripts can be run directly, using the executables is recommended for better performance and compatibility.
 
-## Building from Source
-
-All release builds include additional metadata added using **Resource Hacker**. To replicate this in your build, update the `Version Info` section with the following modifications using the tool:
-
-```c
-		VALUE "FileDescription", "Shiftkey"
-		VALUE "OriginalFilename", "Shiftkey.exe"
-		VALUE "ProductName", "Shiftkey"
-```
-
 ## Usage
 
 - **Global Media Controls**

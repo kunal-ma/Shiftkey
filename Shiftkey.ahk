@@ -1,4 +1,14 @@
 ; ----------------------------------
+;         File Information         -
+; ---------------------------------- 
+
+;@Ahk2Exe-SetMainIcon icon.ico
+;@Ahk2Exe-SetVersion 1.0.0
+;@Ahk2Exe-SetName Shiftkey
+;@Ahk2Exe-SetDescription Shiftkey
+;@Ahk2Exe-SetOrigFilename Shiftkey.exe
+
+; ----------------------------------
 ;          Initialization          -
 ; ----------------------------------
 
