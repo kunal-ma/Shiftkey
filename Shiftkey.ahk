@@ -47,7 +47,11 @@ A_UserDir := EnvGet("USERPROFILE")
 #+s::Send "^+!#s"
 
 ; Win + Alt + Enter : Exit the script
-#!Enter::ExitApp
+#!Enter::
+{
+    MsgBox "Exiting now...`nThank you for using Shiftkey :D", "Shiftkey", "Iconi T3"
+    ExitApp
+}
 
 ; ----------------------------------
 ;         Advanced Functions       -
